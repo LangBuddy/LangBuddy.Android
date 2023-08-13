@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Text, View, KeyboardAvoidingView } from "react-native";
 import { useForm } from 'react-hook-form';
 import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
 import { ButtonColorEnum } from "../../components/Button/type";
@@ -42,10 +42,12 @@ export default function AuthSignIn() {
                 <View style={styles.authSignInForgot}>
                     <ButtonLink title="Forgot password?" />
                 </View>
-                <View style={styles.authSignInApplication}>
-                    <Text style={styles.authSignInApplicationText}>Or sign in with</Text>
-                    <Image source={require('../../assets/icons/googleIcon.png')} />
-                </View>
+                <KeyboardAvoidingView behavior="height" style={{flex: 1}}>
+                    <View style={styles.authSignInApplication}>
+                        <Text style={styles.authSignInApplicationText}>Or sign in with</Text>
+                        <Image source={require('../../assets/icons/googleIcon.png')} />
+                    </View>
+                </KeyboardAvoidingView>
             </View>
         </AuthLayout>
     )

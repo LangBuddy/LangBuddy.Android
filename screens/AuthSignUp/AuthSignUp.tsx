@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, KeyboardAvoidingView } from "react-native";
 import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
 import Input from "../../components/Input";
 import { Icon } from "../../components/Icon";
@@ -48,10 +48,12 @@ export default function AuthSignUp() {
                 <View style={styles.authSignInForgot}>
                     <ButtonLink title="Forgot password?" />
                 </View>
-                <View style={styles.authSignInApplication}>
-                    <Text style={styles.authSignInApplicationText}>Or sign up with</Text>
-                    <Image source={require('../../assets/icons/googleIcon.png')} />
-                </View>
+                <KeyboardAvoidingView behavior='height' style={{flex: 1}}>
+                    <View style={styles.authSignInApplication}>
+                        <Text style={styles.authSignInApplicationText}>Or sign up with</Text>
+                        <Image source={require('../../assets/icons/googleIcon.png')} />
+                    </View>
+                </KeyboardAvoidingView>
             </View>
         </AuthLayout>
     )
