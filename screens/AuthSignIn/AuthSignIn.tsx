@@ -11,12 +11,12 @@ import ButtonLink from "../../components/ButtonLink";
 import Button from "../../components/Button/Button";
 
 export default function AuthSignIn() {
-    const { register, handleSubmit, setValue } = useForm<AuthSignInFormType>();
+    const { register: login, handleSubmit, setValue } = useForm<AuthSignInFormType>();
 
     React.useEffect(() => {
-        register('email');
-        register('password');
-    }, [register]);
+        login('email');
+        login('password');
+    }, [login]);
 
     const onChangeField = React.useCallback((name: 'email' | 'password') => (text: string) => {
         setValue(name, text);
@@ -48,6 +48,5 @@ export default function AuthSignIn() {
                 </View>
             </View>
         </AuthLayout>
-
     )
 }
