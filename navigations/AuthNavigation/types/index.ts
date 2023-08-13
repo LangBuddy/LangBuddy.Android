@@ -1,5 +1,6 @@
 export enum AuthNavigationScreens {
     AuthWelcome = 'AuthWelcome',
     AuthSignIn = 'AuthSignIn',
-    AuthSignUp = 'AuthSignUp'
+    AuthSignUp = 'AuthSignUp',
+    AuthRestorePassword = 'AuthRestorePassword'
 }

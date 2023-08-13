@@ -4,6 +4,7 @@ import { AuthNavigationScreens } from "./types";
 import AuthWelcome from "../../screens/AuthWelcome/AuthWelcome";
 import AuthSignIn from "../../screens/AuthSignIn/AuthSignIn";
 import AuthSignUp from "../../screens/AuthSignUp/AuthSignUp";
+import AuthRestorePassword from "../../screens/AuthRestorePassword/AuthRestorePassword";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,13 +13,16 @@ export default function AuthNavigation() {
         <Stack.Navigator>
             <Stack.Screen name={AuthNavigationScreens.AuthWelcome}
                 component={AuthWelcome}
-                options={{headerShown: false}} />
+                options={{ headerShown: false }} />
             <Stack.Screen name={AuthNavigationScreens.AuthSignIn}
                 component={AuthSignIn}
-                options={{headerShown: false}} />
+                options={{ headerShown: false }} />
             <Stack.Screen name={AuthNavigationScreens.AuthSignUp}
                 component={AuthSignUp}
-                options={{headerShown: false}} />
+                options={{ headerShown: false }} />
+            <Stack.Screen name={AuthNavigationScreens.AuthRestorePassword}
+                component={AuthRestorePassword}
+                options={{ headerShown: false }} />
         </Stack.Navigator>
     </NavigationContainer>
 }
