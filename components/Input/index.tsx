@@ -1,7 +1,5 @@
 import { TextInput, TextInputProps, View } from "react-native";
 import { styles } from "./styles";
-import { Icon } from "../Icon";
-import Svg from "react-native-svg"
 
 interface IInput extends TextInputProps {
     icon?: JSX.Element;
