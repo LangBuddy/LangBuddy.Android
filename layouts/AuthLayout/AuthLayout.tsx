@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from "react-native";
-import { styles } from "./style";
+import { styles } from "./styles";
 
 export default function AuthLayout({children}:{children: React.ReactNode}) {
     return (

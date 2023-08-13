@@ -2,7 +2,7 @@ import { View, Text } from 'react-native';
 import AuthLayout from '../../layouts/AuthLayout/AuthLayout';
 import Button from '../../components/Button/Button';
 import { ButtonColorEnum } from '../../components/Button/type';
-import { styles } from './style';
+import { styles } from './styles';
 
 export default function AuthWelcome() {
     return (
