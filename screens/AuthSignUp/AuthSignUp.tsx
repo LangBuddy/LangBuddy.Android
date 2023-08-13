@@ -45,9 +45,6 @@ export default function AuthSignUp() {
                         onChangeText={onChangeField('password')} />
                     <Button title="Sign In" color={ButtonColorEnum.solid} />
                 </View>
-                <View style={styles.authSignInForgot}>
-                    <ButtonLink title="Forgot password?" />
-                </View>
                 <KeyboardAvoidingView behavior='height' style={{flex: 1}}>
                     <View style={styles.authSignInApplication}>
                         <Text style={styles.authSignInApplicationText}>Or sign up with</Text>

@@ -13,10 +13,6 @@ export const styles = StyleSheet.create({
         marginTop: 38
     },
 
-    authSignInForgot: {
-        marginTop: 23
-    },
-
     authSignInApplication: {
         flex: 1,
         alignItems: 'center',
