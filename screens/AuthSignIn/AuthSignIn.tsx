@@ -9,8 +9,14 @@ import { styles } from "./styles";
 import { AuthSignInFormType } from "./types";
 import ButtonLink from "../../components/ButtonLink";
 import Button from "../../components/Button/Button";
+import { NavigationProp, ParamListBase } from "@react-navigation/native";
+import { AuthNavigationScreens } from "../../navigations/AuthNavigation/types";
 
-export default function AuthSignIn() {
+interface IAuthSignIn {
+    navigation?: NavigationProp<ParamListBase, string>
+}
+
+export default function AuthSignIn({ navigation }: IAuthSignIn) {
     const { register: login, handleSubmit, setValue } = useForm<AuthSignInFormType>();
 
     React.useEffect(() => {
@@ -40,9 +46,10 @@ export default function AuthSignIn() {
                     <Button title="Sign In" color={ButtonColorEnum.solid} />
                 </View>
                 <View style={styles.authSignInForgot}>
-                    <ButtonLink title="Forgot password?" />
+                    <ButtonLink title="Forgot password?"
+                        onPress={() => navigation?.navigate(AuthNavigationScreens.AuthRestorePassword)} />
                 </View>
-                <KeyboardAvoidingView behavior="height" style={{flex: 1}}>
+                <KeyboardAvoidingView behavior="height" style={{ flex: 1 }}>
                     <View style={styles.authSignInApplication}>
                         <Text style={styles.authSignInApplicationText}>Or sign in with</Text>
                         <Image source={require('../../assets/icons/googleIcon.png')} />
