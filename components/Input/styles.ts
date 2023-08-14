@@ -20,5 +20,9 @@ export const styles = StyleSheet.create({
         fontFamily: 'Montserrat-Regular',
         fontWeight: '400',
         width: '100%',
+    },
+
+    componentInputValueFocused: {
+        color: '#000',
     }
 });
