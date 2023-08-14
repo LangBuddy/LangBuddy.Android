@@ -1,4 +1,4 @@
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
 
 export default function User() {
     return <Svg

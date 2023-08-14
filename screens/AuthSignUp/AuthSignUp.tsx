@@ -2,13 +2,13 @@ import React from "react";
 import { View, Text, Image, KeyboardAvoidingView } from "react-native";
 import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
 import Input from "../../components/Input";
-import { Icon } from "../../components/Icon";
 import { useForm } from "react-hook-form";
 import { AuthSignUpFormType } from "./types";
-import { styles } from "./styles";
 import Button from "../../components/Button/Button";
 import { ButtonColorEnum } from "../../components/Button/type";
-import ButtonLink from "../../components/ButtonLink";
+import { Email, Password, User } from "../../components/Icon";
+
+import { styles } from "./styles";
 
 export default function AuthSignUp() {
     const { register, handleSubmit, setValue } = useForm<AuthSignUpFormType>();
@@ -27,18 +27,18 @@ export default function AuthSignUp() {
         <AuthLayout>
             <View style={styles.authSignIn}>
                 <View style={styles.authSignInForm}>
-                    <Input icon={<Icon.User />}
+                    <Input icon={<User />}
                         placeholder="nickname"
                         onChangeText={onChangeField('nickname')}
                         autoComplete="nickname"
                         textContentType="nickname" />
-                    <Input icon={<Icon.Email />}
+                    <Input icon={<Email />}
                         placeholder="email"
                         onChangeText={onChangeField('email')}
                         autoComplete="email"
                         keyboardType='email-address'
                         textContentType="emailAddress" />
-                    <Input icon={<Icon.Password />}
+                    <Input icon={<Password />}
                         secureTextEntry
                         autoComplete="password"
                         placeholder="password"

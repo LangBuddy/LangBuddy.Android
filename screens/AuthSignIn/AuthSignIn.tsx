@@ -1,16 +1,17 @@
 import React from "react";
 import { Image, Text, View, KeyboardAvoidingView } from "react-native";
 import { useForm } from 'react-hook-form';
+import { NavigationProp, ParamListBase } from "@react-navigation/native";
 import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
 import { ButtonColorEnum } from "../../components/Button/type";
 import Input from "../../components/Input";
-import { Icon } from "../../components/Icon";
-import { styles } from "./styles";
 import { AuthSignInFormType } from "./types";
 import ButtonLink from "../../components/ButtonLink";
 import Button from "../../components/Button/Button";
-import { NavigationProp, ParamListBase } from "@react-navigation/native";
 import { AuthNavigationScreens } from "../../navigations/AuthNavigation/types";
+import { Email, Password } from "../../components/Icon";
+
+import { styles } from "./styles";
 
 interface IAuthSignIn {
     navigation?: NavigationProp<ParamListBase, string>
@@ -32,13 +33,13 @@ export default function AuthSignIn({ navigation }: IAuthSignIn) {
         <AuthLayout>
             <View style={styles.authSignIn}>
                 <View style={styles.authSignInForm}>
-                    <Input icon={<Icon.Email />}
+                    <Input icon={<Email />}
                         placeholder="email"
                         onChangeText={onChangeField('email')}
                         autoComplete="email"
                         keyboardType='email-address'
                         textContentType="emailAddress" />
-                    <Input icon={<Icon.Password />}
+                    <Input icon={<Password />}
                         secureTextEntry
                         autoComplete="password"
                         placeholder="password"
