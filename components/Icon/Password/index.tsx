@@ -1,4 +1,4 @@
-import Svg, { SvgProps, G, Path, Defs, ClipPath } from "react-native-svg"
+import Svg, { G, Path, Defs, ClipPath } from "react-native-svg"
 import { IconType } from "../types"
 import { getColorBuIsFocused } from "../../../utils/commons/Icon"
 
