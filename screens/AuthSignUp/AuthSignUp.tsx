@@ -27,24 +27,33 @@ export default function AuthSignUp() {
             <View style={styles.authSignIn}>
                 <View style={styles.authSignInForm}>
                     <Input icon={User}
-                        placeholder="nickname"
-                        onChangeText={onChangeField('nickname')}
-                        autoComplete="nickname"
-                        textContentType="nickname" />
+                        options={{
+                            placeholder: "nickname",
+                            onChangeText: onChangeField('nickname'),
+                            autoComplete: "nickname",
+                            textContentType: "nickname"
+                        }}
+                    />
                     <Input icon={Email}
-                        placeholder="email"
-                        onChangeText={onChangeField('email')}
-                        autoComplete="email"
-                        keyboardType='email-address'
-                        textContentType="emailAddress" />
+                        options={{
+                            placeholder: "email",
+                            onChangeText: onChangeField('email'),
+                            autoComplete: "email",
+                            keyboardType: 'email-address',
+                            textContentType: "emailAddress"
+                        }}
+                    />
                     <Input icon={Password}
-                        secureTextEntry
-                        autoComplete="password"
-                        placeholder="password"
-                        onChangeText={onChangeField('password')} />
+                        options={{
+                            secureTextEntry: true,
+                            autoComplete: "password",
+                            placeholder: "password",
+                            onChangeText: onChangeField('password')
+                        }}
+                    />
                     <Button title="Sign In" color='solid' />
                 </View>
-                <KeyboardAvoidingView behavior='height' style={{flex: 1}}>
+                <KeyboardAvoidingView behavior='height' style={{ flex: 1 }}>
                     <View style={styles.authSignInApplication}>
                         <Text style={styles.authSignInApplicationText}>Or sign up with</Text>
                         <Image source={require('../../assets/icons/googleIcon.png')} />

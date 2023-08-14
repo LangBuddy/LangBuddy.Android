@@ -33,16 +33,22 @@ export default function AuthSignIn({ navigation }: IAuthSignIn) {
             <View style={styles.authSignIn}>
                 <View style={styles.authSignInForm}>
                     <Input icon={Email}
-                        placeholder="email"
-                        onChangeText={onChangeField('email')}
-                        autoComplete="email"
-                        keyboardType='email-address'
-                        textContentType="emailAddress" />
+                        options={{
+                            placeholder: "email",
+                            onChangeText: onChangeField('email'),
+                            autoComplete: 'email',
+                            keyboardType: 'email-address',
+                            textContentType: "emailAddress",
+                        }}
+                    />
                     <Input icon={Password}
-                        secureTextEntry
-                        autoComplete="password"
-                        placeholder="password"
-                        onChangeText={onChangeField('password')} />
+                        options={{
+                            secureTextEntry: true,
+                            autoComplete: "password",
+                            placeholder: "password",
+                            onChangeText: onChangeField('password')
+                        }}
+                    />
                     <Button title="Sign In" color='solid' />
                 </View>
                 <View style={styles.authSignInForgot}>

@@ -17,13 +17,17 @@ export default function AuthRestorePassword() {
                     Restore Password
                 </Text>
                 <View style={styles.authRestorePasswordForm}>
-                    <Input placeholder="email"
-                        icon={Email} 
-                        value={email}
-                        onChangeText={setEmail}
-                        autoComplete="email"
-                        keyboardType='email-address'
-                        textContentType="emailAddress"/>
+                    <Input
+                        icon={Email}
+                        options={{
+                            placeholder: "email",
+                            value: email,
+                            onChangeText: setEmail,
+                            autoComplete: "email",
+                            keyboardType: 'email-address',
+                            textContentType: "emailAddress",
+                        }}
+                    />
                     <Button title="Restore" color='solid' />
                 </View>
             </View>
