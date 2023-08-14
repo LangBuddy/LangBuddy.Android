@@ -26,18 +26,18 @@ export default function AuthSignUp() {
         <AuthLayout>
             <View style={styles.authSignIn}>
                 <View style={styles.authSignInForm}>
-                    <Input icon={<User />}
+                    <Input icon={User}
                         placeholder="nickname"
                         onChangeText={onChangeField('nickname')}
                         autoComplete="nickname"
                         textContentType="nickname" />
-                    <Input icon={<Email />}
+                    <Input icon={Email}
                         placeholder="email"
                         onChangeText={onChangeField('email')}
                         autoComplete="email"
                         keyboardType='email-address'
                         textContentType="emailAddress" />
-                    <Input icon={<Password />}
+                    <Input icon={Password}
                         secureTextEntry
                         autoComplete="password"
                         placeholder="password"

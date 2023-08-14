@@ -32,13 +32,13 @@ export default function AuthSignIn({ navigation }: IAuthSignIn) {
         <AuthLayout>
             <View style={styles.authSignIn}>
                 <View style={styles.authSignInForm}>
-                    <Input icon={<Email />}
+                    <Input icon={Email}
                         placeholder="email"
                         onChangeText={onChangeField('email')}
                         autoComplete="email"
                         keyboardType='email-address'
                         textContentType="emailAddress" />
-                    <Input icon={<Password />}
+                    <Input icon={Password}
                         secureTextEntry
                         autoComplete="password"
                         placeholder="password"

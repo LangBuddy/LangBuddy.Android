@@ -18,7 +18,7 @@ export default function AuthRestorePassword() {
                 </Text>
                 <View style={styles.authRestorePasswordForm}>
                     <Input placeholder="email"
-                        icon={<Email />} 
+                        icon={Email} 
                         value={email}
                         onChangeText={setEmail}
                         autoComplete="email"
