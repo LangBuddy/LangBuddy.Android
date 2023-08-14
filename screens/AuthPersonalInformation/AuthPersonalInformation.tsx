@@ -5,8 +5,14 @@ import { global } from "../../global";
 import Input from "../../components/Input";
 import { Calendar, User, Gender } from "../../components/Icon";
 import Button from "../../components/Button/Button";
+import { NavigationProp, ParamListBase } from "@react-navigation/native";
+import { AuthNavigationScreens } from "../../navigations/AuthNavigation/types";
 
-export default function AuthPersonalInformation() {
+interface IAuthPersonalInformation {
+    navigation?: NavigationProp<ParamListBase, string>
+}
+
+export default function AuthPersonalInformation({ navigation }: IAuthPersonalInformation) {
     return (
         <AuthLayout>
             <View style={global.authMain}>
@@ -34,7 +40,8 @@ export default function AuthPersonalInformation() {
                         options={{
                             placeholder: 'Gender'
                         }} />
-                    <Button title="Continue" color="solid" />
+                    <Button title="Continue" color="solid"
+                        onPress={() => navigation?.navigate(AuthNavigationScreens.AuthRegionSettings)} />
                 </View>
             </View>
         </AuthLayout>
