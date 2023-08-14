@@ -1,10 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-    authWelcome: {
-        alignItems: 'center',
-        flex: 1,
-    },
     authWelcomeInfo: {
         flex: 1,
         alignItems: 'center',
@@ -21,11 +17,5 @@ export const styles = StyleSheet.create({
         fontFamily: 'Montserrat-SemiBold',
         color: '#fff',
         marginTop: 43,
-    },
-    authWelcomeSubtitle: {
-        fontSize: 16,
-        fontFamily: 'Montserrat-SemiBold',
-        color: '#fff',
-        marginTop: 34,
     },
 })

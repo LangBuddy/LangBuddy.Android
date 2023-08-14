@@ -1,15 +1,22 @@
 import React from "react";
 import { View, Text, Image, KeyboardAvoidingView } from "react-native";
+import { NavigationProp, ParamListBase } from "@react-navigation/native";
 import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
 import Input from "../../components/Input";
 import { useForm } from "react-hook-form";
 import { AuthSignUpFormType } from "./types";
 import Button from "../../components/Button/Button";
 import { Email, Password, User } from "../../components/Icon";
+import { AuthNavigationScreens } from "../../navigations/AuthNavigation/types";
 
 import { styles } from "./styles";
+import { global } from "../../global";
 
-export default function AuthSignUp() {
+interface IAuthSignUp {
+    navigation?: NavigationProp<ParamListBase, string>
+}
+
+export default function AuthSignUp({ navigation }: IAuthSignUp) {
     const { register, handleSubmit, setValue } = useForm<AuthSignUpFormType>();
 
     React.useEffect(() => {
@@ -24,8 +31,8 @@ export default function AuthSignUp() {
 
     return (
         <AuthLayout>
-            <View style={styles.authSignIn}>
-                <View style={styles.authSignInForm}>
+            <View style={global.authMain}>
+                <View style={global.authForm}>
                     <Input icon={User}
                         options={{
                             placeholder: "nickname",
@@ -51,7 +58,8 @@ export default function AuthSignUp() {
                             onChangeText: onChangeField('password')
                         }}
                     />
-                    <Button title="Sign In" color='solid' />
+                    <Button title="Sign In" color='solid'
+                    onPress={() => navigation?.navigate(AuthNavigationScreens.AuthPersonalInformation)} />
                 </View>
                 <KeyboardAvoidingView behavior='height' style={{ flex: 1 }}>
                     <View style={styles.authSignInApplication}>

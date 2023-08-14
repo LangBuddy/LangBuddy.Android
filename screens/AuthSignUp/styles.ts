@@ -1,18 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-    authSignIn: {
-        alignItems: 'center',
-        flex: 1,
-    },
-
-    authSignInForm: {
-        alignItems: 'center',
-        width: '100%',
-        rowGap: 14,
-        marginTop: 38
-    },
-
     authSignInApplication: {
         flex: 1,
         alignItems: 'center',

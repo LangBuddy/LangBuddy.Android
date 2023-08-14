@@ -9,11 +9,11 @@ import Button from "../../components/Button/Button";
 export default function AuthPersonalInformation() {
     return (
         <AuthLayout>
-            <View style={styles.authPersonalInformation}>
+            <View style={global.authMain}>
                 <Text style={global.authSubtitle}>
                     Information about yourself
                 </Text>
-                <View style={styles.authPersonalInformationForm}>
+                <View style={global.authForm}>
                     <Input
                         icon={User}
                         options={{

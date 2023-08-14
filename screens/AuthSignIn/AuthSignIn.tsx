@@ -11,6 +11,7 @@ import { AuthNavigationScreens } from "../../navigations/AuthNavigation/types";
 import { Email, Password } from "../../components/Icon";
 
 import { styles } from "./styles";
+import { global } from "../../global";
 
 interface IAuthSignIn {
     navigation?: NavigationProp<ParamListBase, string>
@@ -30,8 +31,8 @@ export default function AuthSignIn({ navigation }: IAuthSignIn) {
 
     return (
         <AuthLayout>
-            <View style={styles.authSignIn}>
-                <View style={styles.authSignInForm}>
+            <View style={global.authMain}>
+                <View style={global.authForm}>
                     <Input icon={Email}
                         options={{
                             placeholder: "email",

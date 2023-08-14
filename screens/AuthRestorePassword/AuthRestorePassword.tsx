@@ -6,17 +6,18 @@ import Button from "../../components/Button/Button";
 import { Email } from "../../components/Icon";
 
 import { styles } from "./styles";
+import { global } from "../../global";
 
 export default function AuthRestorePassword() {
     const [email, setEmail] = React.useState<string>("");
 
     return (
         <AuthLayout>
-            <View style={styles.authRestorePassword}>
-                <Text style={styles.authRestorePasswordText}>
+            <View style={global.authMain}>
+                <Text style={global.authSubtitle}>
                     Restore Password
                 </Text>
-                <View style={styles.authRestorePasswordForm}>
+                <View style={global.authForm}>
                     <Input
                         icon={Email}
                         options={{

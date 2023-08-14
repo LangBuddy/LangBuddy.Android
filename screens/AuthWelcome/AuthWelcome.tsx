@@ -5,6 +5,7 @@ import Button from '../../components/Button/Button';
 import { AuthNavigationScreens } from '../../navigations/AuthNavigation/types';
 
 import { styles } from './styles';
+import { global } from '../../global';
 
 interface IAuthWelcome {
     navigation?: NavigationProp<ParamListBase, string>
@@ -13,10 +14,10 @@ interface IAuthWelcome {
 export default function AuthWelcome({ navigation }: IAuthWelcome) {
     return (
         <AuthLayout>
-            <View style={styles.authWelcome}>
+            <View style={global.authMain}>
                 <View style={styles.authWelcomeInfo}>
                     <Text style={styles.authWelcomeTitle}>Welcome</Text>
-                    <Text style={styles.authWelcomeSubtitle}>Authorization</Text>
+                    <Text style={global.authSubtitle}>Authorization</Text>
                 </View>
                 <View style={styles.authWelcomeMenu}>
                     <Button title='Sign In' color='solid'
