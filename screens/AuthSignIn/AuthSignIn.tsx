@@ -1,10 +1,9 @@
 import React from "react";
 import { Image, Text, View, KeyboardAvoidingView } from "react-native";
 import { useForm } from 'react-hook-form';
-import { NavigationProp, ParamListBase } from "@react-navigation/native";
 import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
 import Input from "../../components/Input";
-import { AuthSignInFormType } from "./types";
+import { AuthSignInFormType, IAuthSignIn } from "./types";
 import ButtonLink from "../../components/ButtonLink";
 import Button from "../../components/Button/Button";
 import { AuthNavigationScreens } from "../../navigations/AuthNavigation/types";
@@ -12,10 +11,6 @@ import { Email, Password } from "../../components/Icon";
 
 import { styles } from "./styles";
 import { global } from "../../global";
-
-interface IAuthSignIn {
-    navigation?: NavigationProp<ParamListBase, string>
-}
 
 export default function AuthSignIn({ navigation }: IAuthSignIn) {
     const { register: login, handleSubmit, setValue } = useForm<AuthSignInFormType>();

@@ -1,15 +1,11 @@
 import { View, Text } from 'react-native';
-import { NavigationProp, ParamListBase } from '@react-navigation/native';
 import AuthLayout from '../../layouts/AuthLayout/AuthLayout';
 import Button from '../../components/Button/Button';
 import { AuthNavigationScreens } from '../../navigations/AuthNavigation/types';
+import { IAuthWelcome } from './types';
 
 import { styles } from './styles';
 import { global } from '../../global';
-
-interface IAuthWelcome {
-    navigation?: NavigationProp<ParamListBase, string>
-}
 
 export default function AuthWelcome({ navigation }: IAuthWelcome) {
     return (

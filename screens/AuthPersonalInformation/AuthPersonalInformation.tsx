@@ -1,16 +1,11 @@
 import { Text, View } from "react-native";
 import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
-import { styles } from "./styles";
-import { global } from "../../global";
 import Input from "../../components/Input";
 import { Calendar, User, Gender } from "../../components/Icon";
 import Button from "../../components/Button/Button";
-import { NavigationProp, ParamListBase } from "@react-navigation/native";
 import { AuthNavigationScreens } from "../../navigations/AuthNavigation/types";
-
-interface IAuthPersonalInformation {
-    navigation?: NavigationProp<ParamListBase, string>
-}
+import { IAuthPersonalInformation } from "./types";
+import { global } from "../../global";
 
 export default function AuthPersonalInformation({ navigation }: IAuthPersonalInformation) {
     return (
