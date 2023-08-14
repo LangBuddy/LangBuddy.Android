@@ -3,7 +3,6 @@ import { Text, View } from "react-native";
 import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
 import Input from "../../components/Input";
 import Button from "../../components/Button/Button";
-import { ButtonColorEnum } from "../../components/Button/type";
 import { Email } from "../../components/Icon";
 
 import { styles } from "./styles";
@@ -25,7 +24,7 @@ export default function AuthRestorePassword() {
                         autoComplete="email"
                         keyboardType='email-address'
                         textContentType="emailAddress"/>
-                    <Button title="Restore" color={ButtonColorEnum.solid} />
+                    <Button title="Restore" color='solid' />
                 </View>
             </View>
         </AuthLayout>

@@ -5,7 +5,6 @@ import Input from "../../components/Input";
 import { useForm } from "react-hook-form";
 import { AuthSignUpFormType } from "./types";
 import Button from "../../components/Button/Button";
-import { ButtonColorEnum } from "../../components/Button/type";
 import { Email, Password, User } from "../../components/Icon";
 
 import { styles } from "./styles";
@@ -43,7 +42,7 @@ export default function AuthSignUp() {
                         autoComplete="password"
                         placeholder="password"
                         onChangeText={onChangeField('password')} />
-                    <Button title="Sign In" color={ButtonColorEnum.solid} />
+                    <Button title="Sign In" color='solid' />
                 </View>
                 <KeyboardAvoidingView behavior='height' style={{flex: 1}}>
                     <View style={styles.authSignInApplication}>

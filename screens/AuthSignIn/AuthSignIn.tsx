@@ -3,7 +3,6 @@ import { Image, Text, View, KeyboardAvoidingView } from "react-native";
 import { useForm } from 'react-hook-form';
 import { NavigationProp, ParamListBase } from "@react-navigation/native";
 import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
-import { ButtonColorEnum } from "../../components/Button/type";
 import Input from "../../components/Input";
 import { AuthSignInFormType } from "./types";
 import ButtonLink from "../../components/ButtonLink";
@@ -44,7 +43,7 @@ export default function AuthSignIn({ navigation }: IAuthSignIn) {
                         autoComplete="password"
                         placeholder="password"
                         onChangeText={onChangeField('password')} />
-                    <Button title="Sign In" color={ButtonColorEnum.solid} />
+                    <Button title="Sign In" color='solid' />
                 </View>
                 <View style={styles.authSignInForgot}>
                     <ButtonLink title="Forgot password?"
