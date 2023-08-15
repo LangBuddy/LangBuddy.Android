@@ -5,13 +5,6 @@ export const global = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
     },
-    authSubtitle: {
-        color: '#FFF',
-        fontFamily: 'Montserrat-SemiBold',
-        fontSize: 16,
-        fontWeight: '600',
-        marginTop: 48
-    },
     authForm: {
         alignItems: 'center',
         width: '100%',
