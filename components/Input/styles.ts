@@ -11,7 +11,11 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         columnGap: 23,
+        
         paddingHorizontal: 11,
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderColor: '#898989'
     },
 
     componentInputValue: {
