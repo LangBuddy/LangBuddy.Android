@@ -1,3 +1,3 @@
 export interface IconType{
-    isFocused?: boolean
+    color?: string
 }
