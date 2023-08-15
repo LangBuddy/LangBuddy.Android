@@ -4,8 +4,10 @@ import { global } from "../../global";
 import Input from "../../components/Input";
 import { Translate, World } from "../../components/Icon";
 import Button from "../../components/Button/Button";
+import { IAuthRegionSettings } from "./types";
+import { AuthNavigationScreens } from "../../navigations/AuthNavigation/types";
 
-export default function AuthRegionSettings() {
+export default function AuthRegionSettings({ navigation }: IAuthRegionSettings) {
     return (
         <AuthLayout
             subtitle="Region Settings">
@@ -21,7 +23,8 @@ export default function AuthRegionSettings() {
                         options={{
                             placeholder: 'Native Language'
                         }} />
-                    <Button title="Continue" color="solid" />
+                    <Button title="Continue" color="solid"
+                        onPress={() => navigation?.navigate(AuthNavigationScreens.AuthLangSelect)} />
                 </View>
             </View>
         </AuthLayout>
