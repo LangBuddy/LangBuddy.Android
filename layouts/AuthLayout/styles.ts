@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         paddingTop: 45,
+        paddingHorizontal: 20
     },
     authImage: {
         height: 109,
@@ -27,7 +28,6 @@ export const styles = StyleSheet.create({
     },
     authContainer: {
         flex: 1,
-        maxWidth: 280,
         width: '100%',
     }
 });
