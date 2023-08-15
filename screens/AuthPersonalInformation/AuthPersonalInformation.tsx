@@ -9,11 +9,9 @@ import { global } from "../../global";
 
 export default function AuthPersonalInformation({ navigation }: IAuthPersonalInformation) {
     return (
-        <AuthLayout>
+        <AuthLayout
+            subtitle="Information about yourself">
             <View style={global.authMain}>
-                <Text style={global.authSubtitle}>
-                    Information about yourself
-                </Text>
                 <View style={global.authForm}>
                     <Input
                         icon={User}

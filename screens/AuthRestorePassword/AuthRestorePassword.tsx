@@ -12,11 +12,9 @@ export default function AuthRestorePassword() {
     const [email, setEmail] = React.useState<string>("");
 
     return (
-        <AuthLayout>
+        <AuthLayout
+            subtitle="Restore Password">
             <View style={global.authMain}>
-                <Text style={global.authSubtitle}>
-                    Restore Password
-                </Text>
                 <View style={global.authForm}>
                     <Input
                         icon={Email}

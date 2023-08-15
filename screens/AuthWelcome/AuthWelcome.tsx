@@ -9,12 +9,10 @@ import { global } from '../../global';
 
 export default function AuthWelcome({ navigation }: IAuthWelcome) {
     return (
-        <AuthLayout>
+        <AuthLayout
+            title='Welcome'
+            subtitle='Authorization'>
             <View style={global.authMain}>
-                <View style={styles.authWelcomeInfo}>
-                    <Text style={styles.authWelcomeTitle}>Welcome</Text>
-                    <Text style={global.authSubtitle}>Authorization</Text>
-                </View>
                 <View style={styles.authWelcomeMenu}>
                     <Button title='Sign In' color='solid'
                         onPress={() => navigation?.navigate(AuthNavigationScreens.AuthSignIn)} />

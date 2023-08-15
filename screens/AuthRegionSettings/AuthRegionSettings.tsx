@@ -7,11 +7,9 @@ import Button from "../../components/Button/Button";
 
 export default function AuthRegionSettings() {
     return (
-        <AuthLayout>
+        <AuthLayout
+            subtitle="Region Settings">
             <View style={global.authMain}>
-                <Text style={global.authSubtitle}>
-                    Region Settings
-                </Text>
                 <View style={global.authForm}>
                     <Input
                         icon={World}
