@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { FlatList, View, Text } from "react-native";
 import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
 import { global } from "../../global";
 import Button from "../../components/Button/Button";
@@ -6,12 +6,21 @@ import React from "react";
 import ModalWindow from "../../components/ModalWindow";
 import Input from "../../components/Input";
 import { Translate } from "../../components/Icon";
+import { styles } from "./styles";
+import LangComponent from "./components/LangComponent";
 
 export default function AuthLangSelect() {
     const [isVisibleModal, setIsVisibleModal] = React.useState<boolean>(false);
+    const [language, setLanguage] = React.useState<string>("");
+    const [languagesList, setLanguagesList] = React.useState<string[]>([]);
 
     const getModalWindow = () => {
-        
+        const handleAddLanguage = (text: string) => {
+            setLanguagesList([...languagesList, text]);
+            setLanguage("");
+            setIsVisibleModal(false);
+        }
+
         return (
             <ModalWindow isVisible={isVisibleModal}
                 title="Add language"
@@ -20,9 +29,13 @@ export default function AuthLangSelect() {
                     <Input
                         icon={Translate}
                         options={{
-                            placeholder: 'Language'
+                            placeholder: 'Language',
+                            value: language,
+                            onChangeText: setLanguage
+
                         }} />
-                    <Button title="Add" color="solid" />
+                    <Button title="Add" color="solid"
+                        onPress={() => handleAddLanguage(language)} />
                 </View>
             </ModalWindow>
         )
@@ -31,9 +44,14 @@ export default function AuthLangSelect() {
     return (
         <AuthLayout
             subtitle="What languages do you want to learn?">
-            <View style={global.authMain}>
+            <View style={styles.authLangSelectContainer}>
                 <Button title="Add language" color="linear"
                     onPress={() => setIsVisibleModal(true)} />
+                <FlatList style={styles.authLangSelectList}
+                    data={languagesList}
+                    renderItem={({ item }) =>
+                        <LangComponent text={item} />
+                    } />
                 <Button title="Continue" color='solid' />
             </View>
             {isVisibleModal &&
