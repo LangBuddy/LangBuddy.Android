@@ -1,3 +1,4 @@
 export interface ILangComponent{
-    text: string
+    text: string,
+    onPress: () => void
 }

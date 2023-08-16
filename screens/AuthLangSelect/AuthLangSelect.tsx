@@ -14,6 +14,13 @@ export default function AuthLangSelect() {
     const [language, setLanguage] = React.useState<string>("");
     const [languagesList, setLanguagesList] = React.useState<string[]>([]);
 
+    const handleRemoveItem = (index: number) => {
+        setLanguagesList([
+            ...languagesList.slice(0, index),
+            ...languagesList.slice(index+1, languagesList.length),
+        ])
+    }
+    
     const getModalWindow = () => {
         const handleAddLanguage = (text: string) => {
             setLanguagesList([...languagesList, text]);
@@ -50,7 +57,8 @@ export default function AuthLangSelect() {
                 <FlatList style={styles.authLangSelectList}
                     data={languagesList}
                     renderItem={({ item }) =>
-                        <LangComponent text={item} />
+                        <LangComponent text={item} 
+                        onPress={() => handleRemoveItem(languagesList.findIndex((el) => el === item))}/>
                     } />
                 <Button title="Continue" color='solid' />
             </View>
