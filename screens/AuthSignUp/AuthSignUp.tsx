@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, KeyboardAvoidingView } from "react-native";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 import AuthLayout from "layouts/AuthLayout/AuthLayout";
 import Input from "components/Input";
@@ -11,8 +11,12 @@ import { global } from "global/styles";
 
 import { AuthSignUpFormType, IAuthSignUp } from "./types";
 import { styles } from "./styles";
+import { useAppDispatch, useAppSelector } from "utils/store";
+import { setAuthData } from "utils/store/reducers/registerReducer";
 
 export default function AuthSignUp({ navigation }: IAuthSignUp) {
+    const authData = useAppSelector((state) => state.registerData.auth)
+    const dispatch = useAppDispatch()
     const { register, handleSubmit, setValue } = useForm<AuthSignUpFormType>();
 
     React.useEffect(() => {
@@ -24,6 +28,11 @@ export default function AuthSignUp({ navigation }: IAuthSignUp) {
     const onChangeField = React.useCallback((name: 'email' | 'password' | 'nickname') => (text: string) => {
         setValue(name, text);
     }, []);
+
+    const onSubmit: SubmitHandler<AuthSignUpFormType> = (data) => {
+        dispatch(setAuthData({...data}))
+        navigation?.navigate(AuthNavigationScreens.AuthPersonalInformation)
+    }
 
     return (
         <AuthLayout>
@@ -54,8 +63,8 @@ export default function AuthSignUp({ navigation }: IAuthSignUp) {
                             onChangeText: onChangeField('password')
                         }}
                     />
-                    <Button title="Sign In" color='solid'
-                    onPress={() => navigation?.navigate(AuthNavigationScreens.AuthPersonalInformation)} />
+                    <Button title="Sign Up" color='solid'
+                    onPress={handleSubmit(onSubmit)} />
                 </View>
                 <KeyboardAvoidingView behavior='height' style={{ flex: 1 }}>
                     <View style={styles.authSignInApplication}>

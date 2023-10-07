@@ -1,21 +1,34 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IRegisterDataState } from "utils/store/types";
+import { IAuthData, IPersonalInformationData, IRegisterDataState } from "utils/store/types";
 
 const initialState: IRegisterDataState = {
-  name: "",
+  auth: {
+    nickname: "",
+    email: "",
+    password: "",
+  },
+  personalInformationData: {
+    firstName: "",
+    lastName: "",
+    birthday: "",
+    gender: "",
+  },
 };
 
 export const registerDataSlice = createSlice({
   name: "registerData",
   initialState,
   reducers: {
-    setRegisterData: (state, action: PayloadAction<IRegisterDataState>) => {
-      state = action.payload;
+    setAuthData: (state, action: PayloadAction<IAuthData>) => {
+      state.auth = action.payload;
+    },
+    setPersonalInformationData: (state, action: PayloadAction<IPersonalInformationData>) => {
+      state.personalInformationData = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setRegisterData } = registerDataSlice.actions;
+export const { setAuthData, setPersonalInformationData } = registerDataSlice.actions;
 
 export default registerDataSlice.reducer;
