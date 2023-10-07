@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { View } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import AuthNavigation from './navigations/AuthNavigation';
+import AuthNavigation from 'navigators/AuthNavigator';
 
 SplashScreen.preventAutoHideAsync();
 

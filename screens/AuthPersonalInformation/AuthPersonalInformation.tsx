@@ -1,11 +1,13 @@
-import { Text, View } from "react-native";
-import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
-import Input from "../../components/Input";
-import { Calendar, User, Gender } from "../../components/Icon";
-import Button from "../../components/Button/Button";
-import { AuthNavigationScreens } from "../../navigations/AuthNavigation/types";
+import { View } from "react-native";
+
+import AuthLayout from "layouts/AuthLayout/AuthLayout";
+import Input from "components/Input";
+import { Calendar, User, Gender } from "components/Icon";
+import Button from "components/Button/Button";
+import { AuthNavigationScreens } from "navigators/AuthNavigator/types"
+import { global } from "global/styles";
+
 import { IAuthPersonalInformation } from "./types";
-import { global } from "../../global";
 
 export default function AuthPersonalInformation({ navigation }: IAuthPersonalInformation) {
     return (

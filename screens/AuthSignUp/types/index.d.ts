@@ -1,4 +1,4 @@
-import { BaseType } from "../../../types"
+import { BaseType } from "global/types"
 
 export interface IAuthSignUp extends BaseType {
 }

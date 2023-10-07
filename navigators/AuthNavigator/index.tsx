@@ -1,13 +1,13 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AuthNavigationScreens } from "./types";
-import AuthWelcome from "../../screens/AuthWelcome/AuthWelcome";
-import AuthSignIn from "../../screens/AuthSignIn/AuthSignIn";
-import AuthSignUp from "../../screens/AuthSignUp/AuthSignUp";
-import AuthRestorePassword from "../../screens/AuthRestorePassword/AuthRestorePassword";
-import AuthPersonalInformation from "../../screens/AuthPersonalInformation/AuthPersonalInformation";
-import AuthRegionSettings from "../../screens/AuthRegionSettings/AuthRegionSettings";
-import AuthLangSelect from "../../screens/AuthLangSelect/AuthLangSelect";
+import AuthWelcome from "screens/AuthWelcome/AuthWelcome";
+import AuthSignIn from "screens/AuthSignIn/AuthSignIn";
+import AuthSignUp from "screens/AuthSignUp/AuthSignUp";
+import AuthRestorePassword from "screens/AuthRestorePassword/AuthRestorePassword";
+import AuthPersonalInformation from "screens/AuthPersonalInformation/AuthPersonalInformation";
+import AuthRegionSettings from "screens/AuthRegionSettings/AuthRegionSettings";
+import AuthLangSelect from "screens/AuthLangSelect/AuthLangSelect";
 
 const Stack = createNativeStackNavigator();
 

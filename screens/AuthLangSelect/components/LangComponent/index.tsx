@@ -1,7 +1,9 @@
 import { Pressable, Text, View } from "react-native";
+
+import { CircleCross, Translate } from "components/Icon";
+
 import { ILangComponent } from "./types";
 import { styles } from "./styles";
-import { CircleCross, Translate } from "../../../../components/Icon";
 
 export default function LangComponent({ text, onPress }: ILangComponent) {
     return (

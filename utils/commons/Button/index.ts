@@ -1,6 +1,6 @@
-import { styles } from "../../../components/Button/style";
-import { ButtonType } from "../../../components/Button/types";
-import { ButtonColorEnum } from "../../../components/Button/types/enums";
+import { styles } from "components/Button/style";
+import { ButtonType } from "components/Button/types";
+import { ButtonColorEnum } from "components/Button/types/enums";
 
 export const getColorButton = (buttonType: ButtonType) => {
     switch (buttonType) {

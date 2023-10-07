@@ -1,15 +1,16 @@
 import React from "react";
 import { View, Text, Image, KeyboardAvoidingView } from "react-native";
-import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
-import Input from "../../components/Input";
 import { useForm } from "react-hook-form";
-import { AuthSignUpFormType, IAuthSignUp } from "./types";
-import Button from "../../components/Button/Button";
-import { Email, Password, User } from "../../components/Icon";
-import { AuthNavigationScreens } from "../../navigations/AuthNavigation/types";
 
+import AuthLayout from "layouts/AuthLayout/AuthLayout";
+import Input from "components/Input";
+import Button from "components/Button/Button";
+import { Email, Password, User } from "components/Icon";
+import { AuthNavigationScreens } from "navigators/AuthNavigator/types";
+import { global } from "global/styles";
+
+import { AuthSignUpFormType, IAuthSignUp } from "./types";
 import { styles } from "./styles";
-import { global } from "../../global";
 
 export default function AuthSignUp({ navigation }: IAuthSignUp) {
     const { register, handleSubmit, setValue } = useForm<AuthSignUpFormType>();

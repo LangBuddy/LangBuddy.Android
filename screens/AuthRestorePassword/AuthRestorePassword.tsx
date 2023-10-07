@@ -1,12 +1,13 @@
 import React from "react";
-import { Text, View } from "react-native";
-import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
-import Input from "../../components/Input";
-import Button from "../../components/Button/Button";
-import { Email } from "../../components/Icon";
+import { View } from "react-native";
+
+import AuthLayout from "layouts/AuthLayout/AuthLayout";
+import Input from "components/Input";
+import Button from "components/Button/Button";
+import { Email } from "components/Icon";
+import { global } from "global/styles";
 
 import { styles } from "./styles";
-import { global } from "../../global";
 
 export default function AuthRestorePassword() {
     const [email, setEmail] = React.useState<string>("");

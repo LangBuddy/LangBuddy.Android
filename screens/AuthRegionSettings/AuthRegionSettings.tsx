@@ -1,11 +1,12 @@
-import { Text, View } from "react-native";
-import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
-import { global } from "../../global";
-import Input from "../../components/Input";
-import { Translate, World } from "../../components/Icon";
-import Button from "../../components/Button/Button";
+import { View } from "react-native";
+import AuthLayout from "layouts/AuthLayout/AuthLayout";
+import { global } from "global/styles";
+import Input from "components/Input";
+import { Translate, World } from "components/Icon";
+import Button from "components/Button/Button";
+import { AuthNavigationScreens } from "navigators/AuthNavigator/types";
+
 import { IAuthRegionSettings } from "./types";
-import { AuthNavigationScreens } from "../../navigations/AuthNavigation/types";
 
 export default function AuthRegionSettings({ navigation }: IAuthRegionSettings) {
     return (

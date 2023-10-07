@@ -1,11 +1,13 @@
-import { FlatList, View, Text } from "react-native";
-import AuthLayout from "../../layouts/AuthLayout/AuthLayout";
-import { global } from "../../global";
-import Button from "../../components/Button/Button";
-import React from "react";
-import ModalWindow from "../../components/ModalWindow";
-import Input from "../../components/Input";
-import { Translate } from "../../components/Icon";
+import React from 'react';
+import { FlatList, View } from "react-native";
+
+import AuthLayout from "layouts/AuthLayout/AuthLayout";
+import { global } from "global/styles";
+import Button from "components/Button/Button";
+import ModalWindow from "components/ModalWindow";
+import Input from "components/Input";
+import { Translate } from "components/Icon";
+
 import { styles } from "./styles";
 import LangComponent from "./components/LangComponent";
 

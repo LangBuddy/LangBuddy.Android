@@ -1,8 +1,8 @@
 import { api } from "../..";
-import { AUTH_API } from "../../../../config";
-import { AuthSignInFormType } from "../../../../screens/AuthSignIn/types";
-import { AuthSignUpFormType } from "../../../../screens/AuthSignUp/types";
-import { TokenType } from "../../../../types";
+import { AUTH_API } from "config";
+import { AuthSignInFormType } from "screens/AuthSignIn/types";
+import { AuthSignUpFormType } from "screens/AuthSignUp/types";
+import { TokenType } from "global/types";
 
 export const login = async (body: AuthSignInFormType) => {
     try {

@@ -1,11 +1,12 @@
-import { View, Text } from 'react-native';
-import AuthLayout from '../../layouts/AuthLayout/AuthLayout';
-import Button from '../../components/Button/Button';
-import { AuthNavigationScreens } from '../../navigations/AuthNavigation/types';
-import { IAuthWelcome } from './types';
+import { View } from 'react-native';
 
+import AuthLayout from 'layouts/AuthLayout/AuthLayout';
+import Button from 'components/Button/Button';
+import { AuthNavigationScreens } from 'navigators/AuthNavigator/types';
+import { global } from 'global/styles';
+
+import { IAuthWelcome } from './types';
 import { styles } from './styles';
-import { global } from '../../global';
 
 export default function AuthWelcome({ navigation }: IAuthWelcome) {
     return (
