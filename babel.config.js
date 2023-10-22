@@ -11,11 +11,13 @@ module.exports = function(api) {
                 "components": "./components",
                 "hooks": "./hooks",
                 "layouts": "./layouts",
-                "navigators": "./navigators",
+                "navigator": "./navigator",
                 "screens": "./screens",
                 "types": "./types",
                 "utils": "./utils",
-                "global": "./global"
+                "global": "./global",
+                "assets": "./assets",
+                "store": "./store"
             }
           },
         ],

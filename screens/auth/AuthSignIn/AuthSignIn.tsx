@@ -1,19 +1,22 @@
 import React from "react";
 import { Image, Text, View, KeyboardAvoidingView } from "react-native";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 
+import { useAppDispatch } from "store";
 import AuthLayout from "layouts/AuthLayout/AuthLayout";
 import Input from "components/Input";
 import ButtonLink from "components/ButtonLink";
 import Button from "components/Button/Button";
-import { AuthNavigationScreens } from "navigators/AuthNavigator/types";
 import { Email, Password } from "components/Icon";
 import { global } from "global/styles";
 
 import { AuthSignInFormType, IAuthSignIn } from "./types";
 import { styles } from "./styles";
+import { sendAuthenticateUser } from "store/user/user.fetching";
+import { AuthNavigatorData } from "navigator/navigator.data";
 
 export function AuthSignIn({ navigation }: IAuthSignIn) {
+  const dispatch = useAppDispatch();
   const {
     register: login,
     handleSubmit,
@@ -31,6 +34,14 @@ export function AuthSignIn({ navigation }: IAuthSignIn) {
     },
     []
   );
+
+  const onSubmit: SubmitHandler<AuthSignInFormType> = async (data) => {
+    await dispatch(sendAuthenticateUser({
+        email: data.email,
+        password: data.password
+    }))
+    // navigation?.navigate(AuthNavigationScreens.AuthPersonalInformation)
+  };
 
   return (
     <AuthLayout>
@@ -55,13 +66,17 @@ export function AuthSignIn({ navigation }: IAuthSignIn) {
               onChangeText: onChangeField("password"),
             }}
           />
-          <Button title="Sign In" color="solid" />
+          <Button
+            title="Sign In"
+            color="solid"
+            onPress={handleSubmit(onSubmit)}
+          />
         </View>
         <View style={styles.authSignInForgot}>
           <ButtonLink
             title="Forgot password?"
             onPress={() =>
-              navigation?.navigate(AuthNavigationScreens.AuthRestorePassword)
+              navigation?.navigate(AuthNavigatorData.AuthRestorePassword)
             }
           />
         </View>

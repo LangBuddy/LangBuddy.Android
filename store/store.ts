@@ -1,11 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import registerReducer from "./reducers/registerReducer";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { rootReducer } from "./reducers";
 
 export const store = configureStore({
-  reducer: {
-    registerData: registerReducer,
-  },
+  reducer: rootReducer
 });
 
 export type RootState = ReturnType<typeof store.getState>;

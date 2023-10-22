@@ -11,11 +11,9 @@ import { global } from "global/styles";
 
 import { AuthSignUpFormType, IAuthSignUp } from "./types";
 import { styles } from "./styles";
-import { useAppDispatch, useAppSelector } from "utils/store";
-import { setAuthData } from "utils/store/reducers/registerReducer";
+import { useAppDispatch, useAppSelector } from "store";
 
 export default function AuthSignUp({ navigation }: IAuthSignUp) {
-    const authData = useAppSelector((state) => state.registerData.auth)
     const dispatch = useAppDispatch()
     const { register, handleSubmit, setValue } = useForm<AuthSignUpFormType>();
 
@@ -30,8 +28,8 @@ export default function AuthSignUp({ navigation }: IAuthSignUp) {
     }, []);
 
     const onSubmit: SubmitHandler<AuthSignUpFormType> = (data) => {
-        dispatch(setAuthData({...data}))
-        navigation?.navigate(AuthNavigationScreens.AuthPersonalInformation)
+        // dispatch(setAuthData({...data}))
+        // navigation?.navigate(AuthNavigationScreens.AuthPersonalInformation)
     }
 
     return (

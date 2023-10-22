@@ -2,7 +2,7 @@ import { View } from "react-native";
 
 import AuthLayout from "layouts/AuthLayout/AuthLayout";
 import Button from "components/Button/Button";
-import { AuthNavigationScreens } from "navigators/AuthNavigator/types";
+import { AuthNavigatorData } from "navigator/navigator.data";
 import { global } from "global/styles";
 
 import { IAuthWelcome } from "./types";
@@ -11,22 +11,21 @@ import { authWelcome } from "./langs";
 
 export function AuthWelcome({ navigation }: IAuthWelcome) {
   return (
-    <AuthLayout title={authWelcome.welcome} subtitle={authWelcome.authorization}>
+    <AuthLayout
+      title={authWelcome.welcome}
+      subtitle={authWelcome.authorization}
+    >
       <View style={global.authMain}>
         <View style={styles.authWelcomeMenu}>
           <Button
             title={authWelcome.signIn}
             color="solid"
-            onPress={() =>
-              navigation?.navigate(AuthNavigationScreens.AuthSignIn)
-            }
+            onPress={() => navigation?.navigate(AuthNavigatorData.AuthSignIn)}
           />
           <Button
             title={authWelcome.signUp}
             color="linear"
-            onPress={() =>
-              navigation?.navigate(AuthNavigationScreens.AuthSignUp)
-            }
+            onPress={() => navigation?.navigate(AuthNavigatorData.AuthSignUp)}
           />
         </View>
       </View>

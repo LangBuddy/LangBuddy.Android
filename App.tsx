@@ -1,13 +1,16 @@
 import { useCallback } from "react";
+import { Provider } from "react-redux";
 import { View } from "react-native";
+
+import { store } from "store";
+
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import AuthNavigation from "navigators/AuthNavigator";
-import { store } from "utils/store";
-import { Provider } from "react-redux";
-SplashScreen.preventAutoHideAsync();
+import { Navigator } from "navigator";
+
 
 function Main() {
+  SplashScreen.preventAutoHideAsync();
   const [fontsLoaded, fontError] = useFonts({
     "Montserrat-ExtraLight": require("./assets/fonts/Montserrat/static/Montserrat-ExtraLight.ttf"),
     "Montserrat-Regular": require("./assets/fonts/Montserrat/static/Montserrat-Regular.ttf"),
@@ -26,7 +29,7 @@ function Main() {
 
   return (
     <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
-      <AuthNavigation />
+      <Navigator />
     </View>
   );
 }
